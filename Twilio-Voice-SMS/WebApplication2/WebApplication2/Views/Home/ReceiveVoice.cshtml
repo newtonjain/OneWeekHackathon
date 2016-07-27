@@ -1,0 +1,22 @@
+﻿@{
+    // make a list of senders we know, indexed by phone number
+
+    Response.ContentType = "text/xml";
+    Response.Write("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>");
+}
+<Response>
+    <Say>
+        The answer to your question is
+    </Say>
+    <Say language="@ViewBag.language">@ViewBag.answer</Say>
+    @if (ViewBag.isAdminFlow == true){
+    <Gather timeout="3600" finishOnKey="*"></Gather><Pause length="2"></Pause>
+    }
+    <Pause length="1"></Pause>
+    <Say>Keep it rolling. Please ask another question</Say>
+    <Record action="http://calltheweb.azurewebsites.net/Home/ReceiveVoice"
+            maxLength="20"
+            finishOnKey="*"
+            timeout="3"/>
+    <Say>I did not receive a recording</Say>
+</Response>

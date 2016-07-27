@@ -1,0 +1,30 @@
+{
+  "engines": {
+    "node": "=4.2.1"
+  },
+  "name": "azure-mobile-apps-quickstarts.backend.node.EmptySite",
+  "version": "0.0.1",
+  "description": "Wolfram Alpha API",
+  "keywords": [
+    "wolfram",
+    "alpha",
+    "api",
+    "wolframalpha"
+  ],
+  "repository": "Azure/azure-mobile-apps-quickstarts",
+  "license": "MIT",
+  "main": "wolfram.js",
+  "dependencies": {
+    "azure-mobile-apps": "^2.0.0",
+    "express": "^4.13.0",
+    "swagger-ui": "^2.1.4",
+    "request": "^2.54.0",
+    "node-wolfram": "0.0.1",
+     "libxmljs": "^0.18.0"
+  },
+  "devDependencies": {
+    "jscoverage": "^0.5.9",
+    "nodeunit": "^0.9.1"
+  }
+
+}

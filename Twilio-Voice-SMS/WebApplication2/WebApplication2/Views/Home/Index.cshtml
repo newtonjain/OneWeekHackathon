@@ -1,0 +1,17 @@
+﻿@{
+    // make a list of senders we know, indexed by phone number
+    
+    Response.ContentType = "text/xml";
+    Response.Write("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>");
+}
+<Response>
+    <Say>Welcome to Microsoft powered Call the Web</Say>
+    <Say>
+        Please ask a question at the beep.
+    </Say>
+    <Record action="Home/ReceiveVoice"
+            maxLength="20"
+            finishOnKey="*" 
+            timeout="3"/>
+    <Say>I did not receive a recording</Say>
+</Response>
